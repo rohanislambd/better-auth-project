@@ -5,7 +5,7 @@ import Image from "next/image";
 const getProducts = async () => {
   try {
     const res = await fetch(
-      "https://better-auth-backend-kappa.vercel.app/api/products",
+      "https://better-auth-backend-kappa.vercel.app/api/products"
     );
 
     const data = await res.json();
@@ -13,6 +13,8 @@ const getProducts = async () => {
     return data;
   } catch (err) {
     console.log(err);
+
+    return [];
   }
 };
 
@@ -20,8 +22,8 @@ export default async function Home() {
 
   const products = await getProducts();
 
-  const downProducts = products.filter(p => p.trend ==='down')
-  console.log(downProducts);
+  const downProducts = products?.filter(p => p.trend ==='down')
+  // console.log(downProducts);
     return (
     <div className="container mx-auto mt-10">
        {/* down product */}
@@ -31,7 +33,7 @@ export default async function Home() {
             <div className='grid grid-cols-1 xl:grid-cols-4 md:grid-cols-2  gap-8'>
               {
                 downProducts.map(product => <ProductCard key={product._id} product={product} ></ProductCard>)
-              }
+              } 
             </div>
           </div>
         </div>

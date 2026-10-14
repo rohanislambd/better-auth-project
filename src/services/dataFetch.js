@@ -48,8 +48,13 @@ const categoriesData = [
 
 export const getCategories = () => {
  
-   return categoriesData;
-
+try{
+     return categoriesData;
+}
+catch(e){
+  console.log(e);
+  return []
+}
 };
 
 

@@ -26,7 +26,7 @@ const CategoryProducts = async ({ params }) => {
 
   const currentCategory = categories.find((c) => c.slug === categorySlug);
 
-  console.log(currentCategory);
+  // console.log(currentCategory);
 
   return (
     <div className="container mx-auto mt-10">
@@ -81,7 +81,7 @@ const CategoryProducts = async ({ params }) => {
 
       {/* Products */}
       <div className="grid grid-cols-2 gap-5">
-        {categoryProduct.map((product) => (
+        {categoryProduct?.map((product) => (
           <ProductCard key={product._id} product={product}></ProductCard>
         ))}
       </div>

@@ -31,7 +31,7 @@ const SignUp = () => {
     callbackURL: "/", 
 });
 
-console.log(signUpData, error);
+
 
   };
   return (
