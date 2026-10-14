@@ -51,3 +51,7 @@ export const getCategories = () => {
    return categoriesData;
 
 };
+
+
+
+

@@ -25,8 +25,8 @@ const Navbar = async () => {
         <li>Profile</li>
       </Link>
 
-       {
-        categories.map(c => <Link key={c._id} href={`/category/${c.slug}`}> <NavLInk categories={c} ></NavLInk></Link>)
+      {
+        categories.map(c => <NavLInk key={c._id} categories={c} ></NavLInk>)
       }
 
       </ul>
@@ -41,7 +41,7 @@ const Navbar = async () => {
     <ul className="menu menu-horizontal px-1 flex items-center gap-4 cursor-pointer">
      
       {
-        categories.map(c => <Link key={c._id} href={`/category/${c.slug}`}> <NavLInk categories={c} ></NavLInk></Link>)
+        categories.map(c => <NavLInk key={c._id} categories={c} ></NavLInk>)
       }
       <Link href={`/profile`}>
         <li>Profile</li>
