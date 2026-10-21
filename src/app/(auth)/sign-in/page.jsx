@@ -10,6 +10,7 @@ import {
   TextField,
 } from "@heroui/react";
 import { signIn } from "@/lib/auth-client";
+import Link from "next/link";
 
 const SignIn = () => {
   const onSubmit =async (e) => {
@@ -70,6 +71,9 @@ const SignIn = () => {
           </Description>
           <FieldError />
         </TextField>
+        <Link className="text-blue-700 hover:underline" href="/forget-password">
+             Forget Password?
+        </Link>
         <div className="flex gap-2">
           <Button type="submit">Submit</Button>
           <Button type="reset" variant="secondary">
