@@ -25,7 +25,7 @@ const SignIn = () => {
     email: data.email, 
     password: data.password,
     
-    callbackURL: "/"
+    callbackURL: "/",
 });
   };
   return (
