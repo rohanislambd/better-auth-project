@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 const ProductCard = ({ product }) => {
-    // console.log(product);
+   // console.log(product);
   return (
     <div className="card bg-base-100 shadow-md border border-base-200">
       {/* Image */}

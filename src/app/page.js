@@ -1,6 +1,7 @@
 import AllProducts from "@/components/AllProducts";
+import MarqueeTexts from "@/components/MarqueeTexts";
 import ProductCard from "@/components/ProductCard";
-import Image from "next/image";
+
 
 const getProducts = async () => {
   try {
@@ -23,9 +24,12 @@ export default async function Home() {
   const products = await getProducts();
 
   const downProducts = products?.filter(p => p.trend ==='down')
-  // console.log(downProducts);
+  
     return (
-    <div className="container mx-auto mt-10">
+    <div>
+    
+       <MarqueeTexts products={products}></MarqueeTexts>
+       <div className="container mx-auto mt-10">
        {/* down product */}
         <div>
           <p className="mb-5 text-xl font-bold">Down Products</p>
@@ -43,6 +47,7 @@ export default async function Home() {
           <AllProducts products={products} />
         </div>
 
+    </div>
     </div>
   );
 }
